@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import io.agora.asceneskit.R
 import io.agora.asceneskit.databinding.KaraokeRoomActivityBinding
 import io.agora.auikit.model.AUIRoomConfig
 import io.agora.auikit.model.AUIRoomContext
@@ -27,8 +28,9 @@ class KaraokeRoomActivity : AppCompatActivity(), AUIRoomManagerRespDelegate, AUI
         private var roomInfo: AUIRoomInfo? = null
         private var themeId: Int = View.NO_ID
 
-        fun launch(context: Context, roomInfo: AUIRoomInfo) {
+        fun launch(context: Context, roomInfo: AUIRoomInfo, themeId: Int = R.style.Theme_AKaraoke) {
             Companion.roomInfo = roomInfo
+            KaraokeRoomActivity.themeId = themeId
 
             val intent = Intent(context, KaraokeRoomActivity::class.java)
             intent.addFlags(FLAG_ACTIVITY_NEW_TASK)

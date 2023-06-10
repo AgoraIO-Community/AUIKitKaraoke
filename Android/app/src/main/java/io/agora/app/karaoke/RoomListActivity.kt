@@ -107,7 +107,7 @@ class RoomListActivity : AppCompatActivity() {
         KaraokeUiKit.createRoom(
             createRoomInfo,
             success = { roomInfo ->
-                KaraokeRoomActivity.launch(this, roomInfo)
+                KaraokeRoomActivity.launch(this, roomInfo, ThemeId)
             },
             failure = {
                 Toast.makeText(this@RoomListActivity, "Create room failed!", Toast.LENGTH_SHORT)
@@ -219,7 +219,7 @@ class RoomListActivity : AppCompatActivity() {
             holder.binding.tvRoomName.text = item.roomName
             holder.binding.tvRoomOwner.text = item.roomOwner?.userName ?: "unKnowUser"
             holder.binding.tvMember.text = "${item.onlineUsers}人正在嗨歌"
-            holder.binding.root.setOnClickListener { KaraokeRoomActivity.launch(this@RoomListActivity, item) }
+            holder.binding.root.setOnClickListener { KaraokeRoomActivity.launch(this@RoomListActivity, item, ThemeId) }
             Glide.with(holder.binding.ivAvatar)
                 .load(item.roomOwner?.userAvatar)
                 .apply(RequestOptions.circleCropTransform())
