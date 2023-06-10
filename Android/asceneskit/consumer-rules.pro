@@ -1,0 +1,3 @@
+-keep class io.agora.**{*;}
+-dontwarn javax.**
+-dontwarn com.google.devtools.build.android.**

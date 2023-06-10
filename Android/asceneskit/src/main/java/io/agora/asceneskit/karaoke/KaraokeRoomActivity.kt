@@ -1,4 +1,4 @@
-package io.agora.app.karaoke.kit
+package io.agora.asceneskit.karaoke
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import io.agora.app.karaoke.RoomListActivity
-import io.agora.app.karaoke.databinding.KaraokeRoomActivityBinding
+import io.agora.asceneskit.databinding.KaraokeRoomActivityBinding
 import io.agora.auikit.model.AUIRoomConfig
 import io.agora.auikit.model.AUIRoomContext
 import io.agora.auikit.model.AUIRoomInfo
@@ -53,9 +52,13 @@ class KaraokeRoomActivity : AppCompatActivity(), AUIRoomManagerRespDelegate, AUI
         mPermissionHelp.checkMicPerm(
             {
                 generateToken { config ->
-                    KaraokeUiKit.launchRoom(roomInfo, config, mViewBinding.karaokeRoomView, KaraokeUiKit.RoomEventHandler {
+                    KaraokeUiKit.launchRoom(
+                        roomInfo,
+                        config,
+                        mViewBinding.karaokeRoomView,
+                        KaraokeUiKit.RoomEventHandler {
 
-                    })
+                        })
                     KaraokeUiKit.subscribeError(roomInfo.roomId, this)
                     KaraokeUiKit.bindRespDelegate(this)
                 }
@@ -69,7 +72,7 @@ class KaraokeRoomActivity : AppCompatActivity(), AUIRoomManagerRespDelegate, AUI
 
     private fun generateToken(onSuccess: (AUIRoomConfig) -> Unit) {
         val config = AUIRoomConfig( roomInfo?.roomId ?: "")
-        config.themeId = RoomListActivity.ThemeId
+        config.themeId = themeId
         var response = 3
         val trySuccess = {
             response -= 1;

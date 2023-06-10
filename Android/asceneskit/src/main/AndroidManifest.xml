@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.agora.asceneskit">
 
+    <application>
+
+        <activity
+            android:name="io.agora.asceneskit.karaoke.KaraokeRoomActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind" />
+
+    </application>
 </manifest>

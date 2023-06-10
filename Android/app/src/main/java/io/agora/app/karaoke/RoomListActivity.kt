@@ -12,8 +12,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.agora.app.karaoke.databinding.RoomListActivityBinding
 import io.agora.app.karaoke.databinding.RoomListItemBinding
-import io.agora.app.karaoke.kit.KaraokeRoomActivity
-import io.agora.app.karaoke.kit.KaraokeUiKit
+import io.agora.asceneskit.karaoke.KaraokeRoomActivity
+import io.agora.asceneskit.karaoke.KaraokeUiKit
 import io.agora.auikit.model.AUICommonConfig
 import io.agora.auikit.model.AUICreateRoomInfo
 import io.agora.auikit.model.AUIRoomInfo
@@ -50,6 +50,7 @@ class RoomListActivity : AppCompatActivity() {
         // init AUIKit
         KaraokeUiKit.setup(
             config = config, // must
+            BuildConfig.SERVER_HOST,
             ktvApi = null,// option
             rtcEngineEx = null, // option
             rtmClient = null // option

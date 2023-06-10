@@ -1,8 +1,5 @@
-package io.agora.app.karaoke.kit
+package io.agora.asceneskit.karaoke
 
-import io.agora.app.karaoke.BuildConfig
-import io.agora.asceneskit.karaoke.AUIKaraokeRoomService
-import io.agora.asceneskit.karaoke.KaraokeRoomView
 import io.agora.auikit.model.AUICommonConfig
 import io.agora.auikit.model.AUICreateRoomInfo
 import io.agora.auikit.model.AUIRoomConfig
@@ -41,6 +38,7 @@ object KaraokeUiKit {
      */
     fun setup(
         config: AUICommonConfig,
+        serverHost: String,
         ktvApi: KTVApi? = null,
         rtcEngineEx: RtcEngineEx? = null,
         rtmClient: RtmClient? = null
@@ -48,7 +46,7 @@ object KaraokeUiKit {
         if (mRoomManager != null) {
             throw initedException
         }
-        HttpManager.setBaseURL(BuildConfig.SERVER_HOST)
+        HttpManager.setBaseURL(serverHost)
         AUIRoomContext.shared().commonConfig = config
         mKTVApi = ktvApi
         if (rtcEngineEx != null) { // 用户塞进来的engine由用户自己管理生命周期
