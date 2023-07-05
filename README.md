@@ -39,7 +39,7 @@ AUIKitKaraoke provides the following core features:
 
 | iOS | Android | Backend |
 | --- | --- | --- |
-| [Karaoke（iOS）](https://github.com/AgoraIO-Community/AUIKitKaraoke/tree/main/iOS/Example/AUIKitKaraoke) | [Karaoke（Android）](https://github.com/AgoraIO-Community/AUIKitKaraoke/tree/main/Android)  | [Karaoke（Backend）](https://github.com/AgoraIO-Community/AUIKitKaraoke/tree/main/backend) |
+| [Karaoke（iOS）](https://github.com/AgoraIO-Community/AUIKitKaraoke/tree/main/iOS/Example) | [Karaoke（Android）](https://github.com/AgoraIO-Community/AUIKitKaraoke/tree/main/Android)  | [Karaoke（Backend）](https://github.com/AgoraIO-Community/AUIKitKaraoke/tree/main/backend) |
 
 
 ## Communication&Feedback
